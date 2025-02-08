@@ -1,3 +1,11 @@
 from django.contrib import admin
+from .models import Discount
+from .models import Purchase
 
-# Register your models here.
+@admin.register(Purchase)
+class PurchaseAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Discount)
+class DiscountAdmin(admin.ModelAdmin):
+    pass

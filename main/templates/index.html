@@ -1,0 +1,232 @@
+{% extends '_base.html' %} {% load static %} {% block title %} صفحه اصلی
+{%endblock title %} {% block main %} {# start carousel #}
+<div
+    id="carouselExampleSlidesOnly"
+    class="carousel slide"
+    data-bs-ride="carousel"
+>
+    <div class="carousel-inner">
+        {% for course in carousel_courses %}
+        <div class="carousel-item active">
+            <img
+                height="455px"
+                src="{% static course.thumbnail %}"
+                class="d-block w-100"
+                alt="..."
+            />
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{# end carousel #}
+
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <img
+                src="{% static 'assets/Muslim graduation-cuate.png' %}"
+                alt="muslem"
+                class="img-fluid"
+            />
+        </div>
+        <div class="col-md-6">
+            <h2 class="display-5">
+                Lorem ipsum <b class="text-warning">dolor</b> sit amet
+                consectetur adipisicing elit.
+            </h2>
+            <p class="text-muted">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+                sit et doloribus necessitatibus in asperiores possimus nobis
+                perferendis sed magni eveniet vel deserunt, iusto cupiditate,
+                voluptas facere, veniam aspernatur autem.
+            </p>
+            <div class="text-center text-md-start">
+                <button class="btn btn-warning">Get started</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-4" style="background-color: #f9f9f9">
+    <section class="container">
+        <h2 class="display-4 text-center">Feutres</h2>
+        <p class="text-muted">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem
+            recusandae alias quia, accusantium accusamus aspernatur itaque
+            possimus, enim dolorum consectetur deserunt quisquam neque delectus
+            placeat ipsum quam mollitia provident voluptatem?
+        </p>
+        <div class="row g-4">
+            <div class="col-xl-4 col-md-6">
+                <div class="card text-center border-0 shadow">
+                    <svg
+                        class="mx-auto mt-3 text-warning"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60"
+                        height="60"
+                        fill="currentColor"
+                        class="bi bi-battery-charging"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M9.585 2.568a.5.5 0 0 1 .226.58L8.677 6.832h1.99a.5.5 0 0 1 .364.843l-5.334 5.667a.5.5 0 0 1-.842-.49L5.99 9.167H4a.5.5 0 0 1-.364-.843l5.333-5.667a.5.5 0 0 1 .616-.09z"
+                        />
+                        <path
+                            d="M2 4h4.332l-.94 1H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2.38l-.308 1H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2"
+                        />
+                        <path
+                            d="M2 6h2.45L2.908 7.639A1.5 1.5 0 0 0 3.313 10H2zm8.595-2-.308 1H12a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H9.276l-.942 1H12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"
+                        />
+                        <path
+                            d="M12 10h-1.783l1.542-1.639q.146-.156.241-.34zm0-3.354V6h-.646a1.5 1.5 0 0 1 .646.646M16 8a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8"
+                        />
+                    </svg>
+                    <h3>Powerful</h3>
+                    <div class="card-body pt-3">
+                        <p class="card-text text-muted">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card text-center border-0 shadow">
+                    <svg
+                        class="mx-auto mt-3 text-warning"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60"
+                        height="60"
+                        fill="currentColor"
+                        class="bi bi-reception-3"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5zm4 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"
+                        />
+                    </svg>
+                    <h3>Network</h3>
+                    <div class="card-body pt-3">
+                        <p class="card-text text-muted">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card text-center border-0 shadow">
+                    <svg
+                        class="mx-auto mt-3 text-warning"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60"
+                        height="60"
+                        fill="currentColor"
+                        class="bi bi-card-heading"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"
+                        />
+                        <path
+                            d="M3 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0-5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z"
+                        />
+                    </svg>
+                    <h3>Heading</h3>
+                    <div class="card-body pt-3">
+                        <p class="card-text text-muted">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card text-center border-0 shadow">
+                    <svg
+                        class="mx-auto mt-3 text-warning"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60"
+                        height="60"
+                        fill="currentColor"
+                        class="bi bi-smartwatch"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M9 5a.5.5 0 0 0-1 0v3H6a.5.5 0 0 0 0 1h2.5a.5.5 0 0 0 .5-.5z"
+                        />
+                        <path
+                            d="M4 1.667v.383A2.5 2.5 0 0 0 2 4.5v7a2.5 2.5 0 0 0 2 2.45v.383C4 15.253 4.746 16 5.667 16h4.666c.92 0 1.667-.746 1.667-1.667v-.383a2.5 2.5 0 0 0 2-2.45V8h.5a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5H14v-.5a2.5 2.5 0 0 0-2-2.45v-.383C12 .747 11.254 0 10.333 0H5.667C4.747 0 4 .746 4 1.667M4.5 3h7A1.5 1.5 0 0 1 13 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 3 11.5v-7A1.5 1.5 0 0 1 4.5 3"
+                        />
+                    </svg>
+                    <h3>Smaller</h3>
+                    <div class="card-body pt-3">
+                        <p class="card-text text-muted">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card text-center border-0 shadow">
+                    <svg
+                        class="mx-auto mt-3 text-warning"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60"
+                        height="60"
+                        fill="currentColor"
+                        class="bi bi-app-indicator"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1z"
+                        />
+                        <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                    </svg>
+                    <h3>Exam</h3>
+                    <div class="card-body pt-3">
+                        <p class="card-text text-muted">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card text-center border-0 shadow">
+                    <svg
+                        class="mx-auto mt-3 text-warning"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60"
+                        height="60"
+                        fill="currentColor"
+                        class="bi bi-backpack4"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm1 .5v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z"
+                        />
+                        <path
+                            d="M8 0a2 2 0 0 0-2 2H3.5a2 2 0 0 0-2 2v1c0 .52.198.993.523 1.349A.5.5 0 0 0 2 6.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6.5a.5.5 0 0 0-.023-.151c.325-.356.523-.83.523-1.349V4a2 2 0 0 0-2-2H10a2 2 0 0 0-2-2m0 1a1 1 0 0 0-1 1h2a1 1 0 0 0-1-1M3 14V6.937q.24.062.5.063h4v.5a.5.5 0 0 0 1 0V7h4q.26 0 .5-.063V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1m9.5-11a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"
+                        />
+                    </svg>
+                    <h3>Backpack</h3>
+                    <div class="card-body pt-3">
+                        <p class="card-text text-muted">
+                            With supporting text below as a natural lead-in to
+                            additional content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock main %}

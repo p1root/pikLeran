@@ -1,3 +1,21 @@
 from django.contrib import admin
+from .models import Course
+from .models import Category
+from .models import Video
+from .models import UserProgress
 
-# Register your models here.
+@admin.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Video)
+class VideoAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(UserProgress)
+class UserProgressAdmin(admin.ModelAdmin):
+    pass
