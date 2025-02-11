@@ -1,20 +1,24 @@
-{% extends '_base.html' %} {% load static %} {% block title %} صفحه اصلی
+{% extends '_base.html' %} {% load static %}{% block title %} صفحه اصلی
 {%endblock title %} {% block main %} {# start carousel #}
 <div
     id="carouselExampleSlidesOnly"
-    class="carousel slide"
+    class="carousel slide container py-3"
     data-bs-ride="carousel"
 >
     <div class="carousel-inner">
         {% for course in carousel_courses %}
-        <div class="carousel-item active">
-            <img
-                height="455px"
-                src="{% static course.thumbnail %}"
-                class="d-block w-100"
-                alt="..."
-            />
-        </div>
+        <a href="{% url 'courses:detail' course.id %}" target="_blank" rel="noopener noreferrer">
+
+            <div class="carousel-item active">
+                <img
+                    height="455px"
+                    src="{{ course.thumbnail.url }}"
+                    class="d-block w-100"
+                    alt="..."
+                />
+            </div>
+
+        </a>
 
         {% endfor %}
     </div>
@@ -23,13 +27,13 @@
 
 <div class="container mt-5">
     <div class="row align-items-center">
-        <div class="col-md-6">
-            <img
-                src="{% static 'assets/Muslim graduation-cuate.png' %}"
-                alt="muslem"
-                class="img-fluid"
-            />
-        </div>
+        <div class="col-md-6 position-relative">
+                <img
+                    src="{% static 'assets/Muslim graduation-cuate.png' %}"
+                    alt="muslem"
+                    class="img-fluid"
+                />
+            </div>
         <div class="col-md-6">
             <h2 class="display-5">
                 Lorem ipsum <b class="text-warning">dolor</b> sit amet

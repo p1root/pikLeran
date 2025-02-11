@@ -16,7 +16,7 @@ class Category(models.Model):
 
 class Course(models.Model):
     title = models.CharField(max_length=200, verbose_name='موضوع')
-    thumbnail = models.FileField(upload_to='static/videos', max_length=100, verbose_name='عکس دوره')
+    thumbnail = models.FileField(upload_to='course_thumbnails', max_length=100, verbose_name='عکس دوره')
     description = models.TextField(verbose_name='توضیحات')
     instructor = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='courses_taught', verbose_name='مربی')
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, verbose_name='دسته بندی')

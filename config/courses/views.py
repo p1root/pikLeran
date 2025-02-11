@@ -4,4 +4,4 @@ from django.views.generic import DetailView
 
 class CourseDetailView(DetailView):
     model = Course
-    template_name = ''
+    template_name = 'courses/detail.html'

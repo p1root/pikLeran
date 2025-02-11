@@ -18,9 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from courses.urls import urlpatterns as course_url_pattern
 from main.urls import urlpatterns as main_url_pattern
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('/', include(main_url_pattern), name='main'),
     path('', include(main_url_pattern), name='main'),
-]
+    path('courses/', include((course_url_pattern, 'courses'), namespace='courses'),),
+
+] 
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
