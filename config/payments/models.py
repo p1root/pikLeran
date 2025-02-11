@@ -13,6 +13,10 @@ class Purchase(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.course.title}"
     
+    class Meta:
+        verbose_name_plural = 'خرید ها'
+        verbose_name = 'خرید' 
+
 class Discount(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='discounts')
     discount_code = models.CharField(max_length=50, unique=True)
@@ -22,3 +26,7 @@ class Discount(models.Model):
 
     def __str__(self):
         return self.discount_code
+
+    class Meta:
+        verbose_name_plural = 'تخفیفات'
+        verbose_name = 'تخفیف'
