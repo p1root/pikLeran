@@ -21,63 +21,66 @@
     </head>
     <body>
         {# header #}
-        <div
-            class="{% if not carousel_courses %} sticky-top {% endif %}p-2 shadow"
-            style="--bs-bg-opacity: 0.95;
+        <div class="{% if not carousel_courses %} sticky-top {% else %} position-relative {% endif %}p-2 shadow header"
+        style="--bs-bg-opacity: 0.95;
+        {% if carousel_courses %}
+            min-height: 80vh;                
+        {% endif %}
+            ">
+                <img src="{% static 'images//CodeTyping.png' %}" class="z-0 position-absolute" alt="">                
+            <div class="z-1">
             {% if carousel_courses %}
-                min-height: 60vh;                
-            {% endif %}
-                "
-        >
-            <nav class="col-12 navbar navbar-expand-lg container">
-                <div class="container-fluid">
-                    <div class="d-flex">
-                        <button class="btn btn-warning">وارد شوید</button>
+                {% endif %}
+                <nav class="navbar navbar-expand-lg container">
+                    <div class="container-fluid">
+                        <div class="d-flex">
+                            <button class="btn btn-warning">وارد شوید</button>
+                        </div>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarColor02"
+                            aria-controls="navbarColor02"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarColor02">
+                            <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+                                <a class="nav-link" href="#">درباره ما</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">ویژگی ها</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">دوره ها</a>
+                                </li>
+                                <li class="nav-item"></li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="/"
+                                        >صفحه اصلی</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="navbar-brand" href="/">پیک لرن</a>
                     </div>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarColor02"
-                        aria-controls="navbarColor02"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarColor02">
-                        <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
-                            <a class="nav-link" href="#">درباره ما</a>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">ویژگی ها</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">دوره ها</a>
-                            </li>
-                            <li class="nav-item"></li>
-                            <li class="nav-item">
-                                <a
-                                    class="nav-link active"
-                                    aria-current="page"
-                                    href="/"
-                                    >صفحه اصلی</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                    <a class="navbar-brand" href="/">پیک لرن</a>
-                </div>
-            </nav>
-            
-            {% if carousel_courses %}
-            <div class="d-flex justify-content-center align-items-center">
-                <div class="col-12 search-box">
-                    <button class="btn btn-success">بگرد</button><input type="text" placeholder="جستجو کنید...">
-                </div> 
-            </div>
-            
-            {% endif %}
+                </nav>
                 
+                {% if carousel_courses %}
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="col-12 search-box">
+                        <button class="btn btn-success">بگرد</button><input type="text" placeholder="...جستجو کنید">
+                    </div> 
+                </div>
+                
+                {% endif %}
+                    
+            </div>
         </div>
         {# header #} {% block main %} {% endblock main %}
 

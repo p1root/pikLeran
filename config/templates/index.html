@@ -1,7 +1,7 @@
 {% extends '_base.html' %} {% load static %}{% block title %} صفحه اصلی
 {%endblock title %} {% block main %} {# start carousel #}
 <div
-    id="carouselExampleSlidesOnly"
+    id="carouselCourse"
     class="carousel slide container py-3"
     data-bs-ride="carousel"
 >
@@ -9,19 +9,32 @@
         {% for course in carousel_courses %}
         <a href="{% url 'courses:detail' course.id %}" target="_blank" rel="noopener noreferrer">
 
-            <div class="carousel-item active">
+            <div class="carousel-item active position-relative">
                 <img
                     height="455px"
                     src="{{ course.thumbnail.url }}"
                     class="d-block w-100"
                     alt="..."
                 />
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{course.title}}</h5>
+                  </div>
+            
             </div>
 
         </a>
 
         {% endfor %}
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCourse" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselCourse" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    
 </div>
 {# end carousel #}
 
