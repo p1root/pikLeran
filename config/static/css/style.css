@@ -7,3 +7,45 @@
 *{
     font-family: 'vasir', sans-serif;
 }
+div.shadow{
+    background: rgb(45,45,52);
+background: linear-gradient(90deg, rgba(45,45,52,1) 0%, rgba(9,9,121,1) 35%, rgba(27,94,148,1) 85%, rgba(43,146,167,1) 100%);
+}
+.nav-link , .navbar-brand{
+    color: white !important;
+}
+.search-box {
+    margin-top: 120px;
+    max-width: 60%;
+    min-width: 30%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(200px);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex; 
+    align-items: center;
+}
+
+.search-box > input {
+    outline: 0;
+    border: 0;
+    height: 42px !important;
+    background: transparent;
+    flex: 1;
+    border: .5px solid #198754;
+    border-left: 0;
+    border-radius: 0px 15px 15px 0px;
+    padding: .5rem;
+    text-align: end;
+    color: white;
+}
+
+.search-box > .btn {
+    outline: 0;
+    padding: .5rem !important;
+    height: auto !important;
+    flex-shrink: 0; 
+    border: 1px solid #198754 !important;
+    border-right: 0 !important;
+    border-radius: 15px 0px 0px 15px !important;
+}
