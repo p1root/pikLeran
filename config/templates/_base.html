@@ -1,4 +1,5 @@
 {% load static %}
+{% load custom_tags %}
 <!DOCTYPE html>
 <html lang="fa">
     <head>
@@ -82,8 +83,16 @@
                     
             </div>
         </div>
-        {# header #} {% block main %} {% endblock main %}
-
+        {# header #} 
+        <div class="row bg-light border border-1 shadow">
+            <div class="col-md-12 col-xl-9">
+                {% block main %} {% endblock main %}
+            </div>
+            <div class="col-xl-3 d-md-none d-xl-block">
+                {% show_latest_courses 3 %}
+            </div>
+        </div>
+            
         <div class="my-5">
             <!-- Footer -->
             <footer

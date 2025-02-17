@@ -5,9 +5,9 @@
     class="carousel slide container py-3"
     data-bs-ride="carousel"
 >
-    <div class="carousel-inner">
+    <div class="carousel-inner rounded-4">
         {% for course in carousel_courses %}
-        <a href="{% url 'courses:detail' course.id %}" target="_blank" rel="noopener noreferrer">
+        <a href="{{course.get_absolute_url}}" target="_blank" rel="noopener noreferrer">
 
             <div class="carousel-item active position-relative">
                 <img

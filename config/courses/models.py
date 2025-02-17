@@ -1,6 +1,6 @@
 from django.db import models
 from  users.models import CustomUser
-from django.utils import timezone
+from django.urls import reverse
 
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='نام')
@@ -28,6 +28,8 @@ class Course(models.Model):
     
     def __str__(self):
         return self.title
+    def get_absolute_url(self):
+        return reverse('courses:detail' , args=[self.id])
     
     class Meta:
         verbose_name_plural = 'دوره ها'
