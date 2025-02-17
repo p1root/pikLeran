@@ -7,6 +7,9 @@
 *{
     font-family: 'vasir', sans-serif;
 }
+body{
+    background-color: #eee !important;
+}
 div.header{
     background: rgb(45,45,52);
 background: linear-gradient(90deg, rgba(45,45,52,1) 0%, rgba(9,9,121,1) 35%, rgba(27,94,148,1) 85%, rgba(43,146,167,1) 100%);
