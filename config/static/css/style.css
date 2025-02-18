@@ -11,7 +11,6 @@ body{
     background-color: #eee !important;
 }
 div.header{
-    background: rgb(45,45,52);
 background: linear-gradient(90deg, rgba(45,45,52,1) 0%, rgba(9,9,121,1) 35%, rgba(27,94,148,1) 85%, rgba(43,146,167,1) 100%);
 }
 div.shadow > img{
@@ -67,3 +66,8 @@ div.shadow > img{
     background: rgb(129,119,119) !important;
     background: linear-gradient(0deg, rgba(129,119,119,1) 0%, rgba(86,86,86,1) 70%, rgba(59,59,59,1) 100%) !important; 
 }
+
+.footer{
+    background: linear-gradient(90deg, rgba(45,45,52,1) 0%, rgba(9,9,121,1) 35%, rgba(27,94,148,1) 85%, rgba(43,146,167,1) 100%);
+    direction: rtl;
+}   
