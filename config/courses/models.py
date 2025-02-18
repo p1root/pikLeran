@@ -5,15 +5,19 @@ from django.urls import reverse
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='نام')
     description = models.TextField(blank=True, null=True, verbose_name='توضیحات')
-    parent_category = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, verbose_name='دسته ی مادر')
+    parent_category = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True,related_name='subcategories', verbose_name='دسته ی مادر')
 
     def __str__(self):
         return self.name
 
+    def get_children(self):
+        """دریافت زیرمجموعه‌های دسته"""
+        return self.subcategories.all()
+
     class Meta:
         verbose_name_plural = 'دسته بندی ها'
         verbose_name = 'دسته بندی'
-
+    
 class Course(models.Model):
     title = models.CharField(max_length=200, verbose_name='موضوع')
     thumbnail = models.FileField(upload_to='course_thumbnails', max_length=100, verbose_name='عکس دوره')

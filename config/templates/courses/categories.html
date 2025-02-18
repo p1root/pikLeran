@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <h3 class="text-center mb-4">دسته‌بندی‌ها</h3>
+    <div class="list-group">
+        {% for category in categories %}
+            <div class="list-group-item text-start">
+                <a data-bs-toggle="collapse" href="#category-{{ category.id }}" role="button" aria-expanded="false" class="text-dark fw-bold text-decoration-none">
+                    {{ category.name }}
+                </a>
+                {% if category.get_children %}
+                    <div class="collapse mt-2" id="category-{{ category.id }}">
+                        <div class="list-group">
+                            {% for sub in category.get_children %}
+                                <div class="list-group-item">
+                                    <a data-bs-toggle="collapse" href="#sub-{{ sub.id }}" role="button" class="text-dark text-decoration-none">
+                                        {{ sub.name }}
+                                    </a>
+                                    {% if sub.get_children %}
+                                        <div class="collapse mt-2" id="sub-{{ sub.id }}">
+                                            <div class="list-group">
+                                                {% for sub_sub in sub.get_children %}
+                                                    <div class="list-group-item">
+                                                        {{ sub_sub.name }}
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
