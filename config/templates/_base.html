@@ -132,14 +132,14 @@
       </div>
     </div>
     {# header #}
-    <div class="content row border border-1 shadow">
-      <div class="bg-light col-md-12 col-xl-9">
+    {% comment %} <div class="content border border-1 shadow"> {% endcomment %}
+      <div class="container my-3 p-2 bg-light col-md-12 col-xl-9 border border-1 shadow rounded">
         {% block main %} {% endblock main %}
       </div>
-      <div class="bg-light col-xl-3 d-md-none d-xl-block">
+      {% comment %} <div class="bg-light col-xl-3 d-md-none d-xl-block">
         {% show_latest_courses 3 %} {% category_tree %}
-      </div>
-    </div>
+      </div> {% endcomment %}
+    {% comment %} </div> {% endcomment %}
 
     <div>
       <!-- Footer -->
