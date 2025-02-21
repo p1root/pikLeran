@@ -1,43 +1,54 @@
+<!-- filepath: /home/youzarsif/Desktop/py/pikLeran/config/templates/courses/detail.html -->
 {% extends './../_base.html' %}
 
-{% block title %}
-    {{object.title}}
-{% endblock title %}
-    
+{% block title %}{{ object.title }}{% endblock title %}
+
 {% block main %}
-<div class="container mt-5 border border-1 shadow p-4">
-    <div class="text-center">
-        <div>
-            <img src="{{ object.thumbnail.url }}" alt="" class="rounded-3" width="700px" height="700px">
-            <h2 class="alert alert-info m-3 text-center">{{ object.title }}</h2>
-            <p class="text-muted alert alert-light text-start">{{ object.description }}</p>
-            <div class="row justify-content-lg-evenly">
-                <p class="col-xl-5 col-md-6 alert alert-info"><strong>مربی:</strong> {{ object.instructor }}</p>
-            <p class="col-xl-5 col-md-6 alert alert-warning"><strong>قیمت:</strong> 
-            {% if object.price == 0 %}
-                <span>رایگان</span>
-            {% else %}
-                {{object.price}} تومان
-            {% endif %}
-                </p>
-            <p class="col-xl-5 col-md-6 alert alert alert-danger"><strong>مدت زمان:</strong> {{ object.duration }}</p>
-            <p class="col-xl-5 col-md-6 alert alert-success"><strong>ایجاد شده در:</strong> {{ object.created_date|date:"F d, Y" }}</p>
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <img src="{{ object.thumbnail.url }}" alt="{{ object.title }}" class="rounded-3 img-fluid" style="max-width: 700px; height: auto;">
+    <h2 class="alert alert-info mt-3">{{ object.title }}</h2>
+    <p class="text-muted alert alert-light text-start">{{ object.description }}</p>
+  </div>
 
-
-            </div>
-
-            <h2 class="mt-5 text-start">فیلم ها</h2>
-            <div class="list-group">
-                {% for video in videos %}
-                <div class="list-group-item">
-                    <h5>{{ video.title }}</h5>
-                    <p class="text-muted">{{ video.description }}</p>
-                    <p><strong>Duration:</strong> {{ video.duration }}</p>
-                    <a href="{{ video.url }}" class="btn btn-primary" target="_blank">Watch Video</a>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
+  <div class="row justify-content-center mb-4 text-center">
+    <div class="col-lg-5 col-md-6 mb-3">
+      <div class="alert alert-info">
+        <strong>مربی:</strong> {{ object.instructor }}
+      </div>
     </div>
+    <div class="col-lg-5 col-md-6 mb-3">
+      <div class="alert alert-warning">
+        <strong>قیمت:</strong>
+        {% if object.price == 0 %}
+        <span>رایگان</span>
+        {% else %}
+        {{ object.price }} تومان
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-lg-5 col-md-6 mb-3">
+      <div class="alert alert-danger">
+        <strong>مدت زمان:</strong> {{ object.duration }}
+      </div>
+    </div>
+    <div class="col-lg-5 col-md-6 mb-3">
+      <div class="alert alert-success">
+        <strong>ایجاد شده در:</strong> {{ object.created_date|date:"F d, Y" }}
+      </div>
+    </div>
+  </div>
+
+  <h2 class="mt-5 text-start">فیلم ها</h2>
+  <div class="list-group">
+    {% for video in videos %}
+    <div class="list-group-item mb-3">
+      <h5>{{ video.title }}</h5>
+      <p class="text-muted">{{ video.description }}</p>
+      <p><strong>مدت زمان:</strong> {{ video.duration }}</p>
+      <a href="{{ video.url }}" class="btn btn-primary" target="_blank">مشاهده ویدیو</a>
+    </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}
