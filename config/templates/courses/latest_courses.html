@@ -1,10 +1,12 @@
-<ul class="list-group list-group-flush ms-3 mt-3 rounded shadow border border-2 text-start p-4">
+<div class="list-group list-group-flush ms-3 mt-3 rounded shadow border border-2 text-start p-3">
     <h3 class="text-center">آخرین دوره ها</h3>
     <hr>
-    {% for course in latest_courses %}
-    
-        <li class="list-group-item rounded list-group-item-action px-3 border-1 rounded-3 list-group-item-info my-1"><a href="{{ course.get_absolute_url }}" class="text-decoration-none">
-            {{ course.title }}</a></li>
+    <ul>
+        {% for course in latest_courses %}
         
-    {% endfor %}
-</ul>
+            <li class="list-group-item rounded list-group-item-action px-3 border-1 rounded-3 list-group-item-info my-1"><a href="{{ course.get_absolute_url }}" class="text-decoration-none">
+                {{ course.title }}</a></li>
+            
+        {% endfor %}
+    </ul>
+</div>
