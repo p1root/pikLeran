@@ -1,0 +1,7 @@
+{% extends "./base.html" %}
+{% block head_title %}ورود{% endblock head_title %}
+{% block form_title %}خوش آمدید{% endblock form_title %}
+{% block btn_text %}ورود{% endblock btn_text %}
+{% block extra_tags %}
+<p class="text-center">حساب دارید؟ <a href="{% url 'accounts:login' %}">ورود</a></p>
+{% endblock extra_tags %}

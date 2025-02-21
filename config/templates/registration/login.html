@@ -1,0 +1,8 @@
+{% extends "./base.html" %}
+{% block head_title %}ورود{% endblock head_title %}
+{% block form_title %}خوش آمدید{% endblock form_title %}
+{% block btn_text %}ورود{% endblock btn_text %}
+{% block extra_tags %}
+<p class="text-center">هنوز ثبت نام نکرده اید؟ <a href="{% url 'accounts:signup' %}">ثبت نام</a></p>
+<p class="text-center">رمز عبور خود را فراموش کرده اید؟ <a href="{% url 'accounts:password_reset' %}">بازیابی رمز عبور</a></p>
+{% endblock extra_tags %}

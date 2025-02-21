@@ -16,16 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from courses.urls import urlpatterns as course_url_pattern
-from main.urls import urlpatterns as main_url_pattern
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.contrib import admin
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', include(main_url_pattern), name='main'),
-    path('', include(main_url_pattern), name='main'),
-    path('courses/', include((course_url_pattern, 'courses'), namespace='courses'),),
+    path('/', include('main.urls'), name='main'),
+    path('', include('main.urls'), name='main'),
+    path('courses/', include(('courses.urls', 'courses'), namespace='courses'),),
+    path('accounts/', include(('users.urls', 'accounts'), namespace='accounts'),),
 
 ] 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
